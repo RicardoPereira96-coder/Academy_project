@@ -40,6 +40,7 @@
             tbEmail = new TextBox();
             tbBirth = new TextBox();
             ListStudents = new ListBox();
+            btBack = new Button();
             SuspendLayout();
             // 
             // btAddStudent
@@ -146,11 +147,22 @@
             ListStudents.TabIndex = 11;
             ListStudents.SelectedIndexChanged += ListStudents_SelectedIndexChanged;
             // 
+            // btBack
+            // 
+            btBack.Location = new Point(658, 397);
+            btBack.Name = "btBack";
+            btBack.Size = new Size(75, 23);
+            btBack.TabIndex = 12;
+            btBack.Text = "Back";
+            btBack.UseVisualStyleBackColor = true;
+            btBack.Click += btBack_Click;
+            // 
             // Students
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btBack);
             Controls.Add(ListStudents);
             Controls.Add(tbBirth);
             Controls.Add(tbEmail);
@@ -183,5 +195,6 @@
         private TextBox tbEmail;
         private TextBox tbBirth;
         private ListBox ListStudents;
+        private Button btBack;
     }
 }

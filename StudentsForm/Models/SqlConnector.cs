@@ -61,7 +61,10 @@ namespace Forms.Models
 
         public void DeleteTraining(int id)
         {
-            throw new NotImplementedException();
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                connection.Execute("dbo.spTraining_Delete", new { ID = id }, commandType: CommandType.StoredProcedure);
+            }
         }
 
         public List<StudentModel> GetStudents_All()
@@ -74,7 +77,10 @@ namespace Forms.Models
 
         public List<TrainingModel> GetTraining_All()
         {
-            throw new NotImplementedException();
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                return connection.Query<TrainingModel>("dbo.spTraining_GetAll", commandType: CommandType.StoredProcedure).ToList();
+            }
         }
 
         public List<TrainingModel> GetWorkoutsByStudent(int studentId)
@@ -104,8 +110,11 @@ namespace Forms.Models
 
         public void UpdateTraining(TrainingModel model)
         {
-            throw new NotImplementedException();
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                connection.Execute("dbo.spTraining_Update", model, commandType: CommandType.StoredProcedure);
+            }
         }
-        // Repetir padrão para Update, Delete e Get usando as SPs respetivas...
+        
     }
 }

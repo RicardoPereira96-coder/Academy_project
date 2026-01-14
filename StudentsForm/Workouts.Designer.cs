@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             ListWorkouts = new ListBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            tbWorkoutDuration = new TextBox();
+            tbWorkoutObjetive = new TextBox();
+            tbWorkoutName = new TextBox();
             lbWokroutDuration = new Label();
             lbWorkoutObjective = new Label();
             lbWorkoutName = new Label();
             btUpdateWorkout = new Button();
             btDeleteWorkout = new Button();
             btAddWorkout = new Button();
+            btBack = new Button();
             SuspendLayout();
             // 
             // ListWorkouts
@@ -48,27 +49,28 @@
             ListWorkouts.Name = "ListWorkouts";
             ListWorkouts.Size = new Size(206, 229);
             ListWorkouts.TabIndex = 23;
+            ListWorkouts.SelectedIndexChanged += ListWorkouts_SelectedIndexChanged;
             // 
-            // textBox3
+            // tbWorkoutDuration
             // 
-            textBox3.Location = new Point(242, 76);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(236, 23);
-            textBox3.TabIndex = 21;
+            tbWorkoutDuration.Location = new Point(242, 76);
+            tbWorkoutDuration.Name = "tbWorkoutDuration";
+            tbWorkoutDuration.Size = new Size(236, 23);
+            tbWorkoutDuration.TabIndex = 21;
             // 
-            // textBox2
+            // tbWorkoutObjetive
             // 
-            textBox2.Location = new Point(242, 49);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(236, 23);
-            textBox2.TabIndex = 20;
+            tbWorkoutObjetive.Location = new Point(242, 49);
+            tbWorkoutObjetive.Name = "tbWorkoutObjetive";
+            tbWorkoutObjetive.Size = new Size(236, 23);
+            tbWorkoutObjetive.TabIndex = 20;
             // 
-            // textBox1
+            // tbWorkoutName
             // 
-            textBox1.Location = new Point(242, 20);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(236, 23);
-            textBox1.TabIndex = 19;
+            tbWorkoutName.Location = new Point(242, 20);
+            tbWorkoutName.Name = "tbWorkoutName";
+            tbWorkoutName.Size = new Size(236, 23);
+            tbWorkoutName.TabIndex = 19;
             // 
             // lbWokroutDuration
             // 
@@ -105,6 +107,7 @@
             btUpdateWorkout.TabIndex = 14;
             btUpdateWorkout.Text = "Update Workout Info";
             btUpdateWorkout.UseVisualStyleBackColor = true;
+            btUpdateWorkout.Click += btUpdateWorkout_Click;
             // 
             // btDeleteWorkout
             // 
@@ -114,6 +117,7 @@
             btDeleteWorkout.TabIndex = 13;
             btDeleteWorkout.Text = "Delete Workout";
             btDeleteWorkout.UseVisualStyleBackColor = true;
+            btDeleteWorkout.Click += btDeleteWorkout_Click;
             // 
             // btAddWorkout
             // 
@@ -123,16 +127,28 @@
             btAddWorkout.TabIndex = 12;
             btAddWorkout.Text = "Add Wokrout";
             btAddWorkout.UseVisualStyleBackColor = true;
+            btAddWorkout.Click += btAddWorkout_Click;
+            // 
+            // btBack
+            // 
+            btBack.Location = new Point(661, 399);
+            btBack.Name = "btBack";
+            btBack.Size = new Size(75, 23);
+            btBack.TabIndex = 24;
+            btBack.Text = "Back";
+            btBack.UseVisualStyleBackColor = true;
+            btBack.Click += btBack_Click;
             // 
             // Workouts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btBack);
             Controls.Add(ListWorkouts);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbWorkoutDuration);
+            Controls.Add(tbWorkoutObjetive);
+            Controls.Add(tbWorkoutName);
             Controls.Add(lbWokroutDuration);
             Controls.Add(lbWorkoutObjective);
             Controls.Add(lbWorkoutName);
@@ -148,14 +164,15 @@
         #endregion
 
         private ListBox ListWorkouts;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox tbWorkoutDuration;
+        private TextBox tbWorkoutObjetive;
+        private TextBox tbWorkoutName;
         private Label lbWokroutDuration;
         private Label lbWorkoutObjective;
         private Label lbWorkoutName;
         private Button btUpdateWorkout;
         private Button btDeleteWorkout;
         private Button btAddWorkout;
+        private Button btBack;
     }
 }

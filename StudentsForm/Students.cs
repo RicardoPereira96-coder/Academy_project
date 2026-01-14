@@ -19,6 +19,7 @@ namespace Forms
         {
             InitializeComponent();
             WireUpLists();
+            ClearForm();
         }
         private void WireUpLists()
         {
@@ -38,7 +39,7 @@ namespace Forms
                     EmailAddress = tbEmail.Text,
                     BirthDate = tbBirth.Text
                 };
-                //GlobalConfig.Connection.CreateStudent(s);
+
                 GlobalConfig.Connection.CreateStudent(s);
                 availableStudents.Add(s);
                 WireUpLists();
@@ -61,7 +62,7 @@ namespace Forms
                 selected.EmailAddress = tbEmail.Text;
                 selected.BirthDate = tbBirth.Text;
 
-                // Chama a spStudents_Update no SQL
+
                 GlobalConfig.Connection.UpdateStudent(selected);
 
                 WireUpLists();
@@ -79,10 +80,10 @@ namespace Forms
 
                 if (confirm == DialogResult.Yes)
                 {
-                    // Remove do SQL (spStudents_Delete)
+
                     GlobalConfig.Connection.DeleteStudent(selected.ID);
 
-                    // Remove da lista em memória e atualiza UI
+
                     availableStudents.Remove(selected);
                     WireUpLists();
                     ClearForm();
@@ -114,6 +115,11 @@ namespace Forms
                 tbEmail.Text = selected.EmailAddress;
                 tbBirth.Text = selected.BirthDate;
             }
+        }
+
+        private void btBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
