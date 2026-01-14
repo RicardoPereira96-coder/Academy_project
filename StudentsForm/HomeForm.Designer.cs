@@ -31,6 +31,8 @@
             btStudents = new Button();
             btWorkouts = new Button();
             lbHome = new Label();
+            btWorkoutAssigns = new Button();
+            btWorkoutsStudents = new Button();
             SuspendLayout();
             // 
             // btStudents
@@ -61,11 +63,31 @@
             lbHome.TabIndex = 2;
             lbHome.Text = "Welcome to the academy homepage";
             // 
+            // btWorkoutAssigns
+            // 
+            btWorkoutAssigns.Location = new Point(448, 119);
+            btWorkoutAssigns.Name = "btWorkoutAssigns";
+            btWorkoutAssigns.Size = new Size(139, 71);
+            btWorkoutAssigns.TabIndex = 3;
+            btWorkoutAssigns.Text = "Workouts Assigns";
+            btWorkoutAssigns.UseVisualStyleBackColor = true;
+            // 
+            // btWorkoutsStudents
+            // 
+            btWorkoutsStudents.Location = new Point(303, 196);
+            btWorkoutsStudents.Name = "btWorkoutsStudents";
+            btWorkoutsStudents.Size = new Size(139, 71);
+            btWorkoutsStudents.TabIndex = 4;
+            btWorkoutsStudents.Text = "Students Workouts";
+            btWorkoutsStudents.UseVisualStyleBackColor = true;
+            // 
             // HomeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btWorkoutsStudents);
+            Controls.Add(btWorkoutAssigns);
             Controls.Add(lbHome);
             Controls.Add(btWorkouts);
             Controls.Add(btStudents);
@@ -80,5 +102,7 @@
         private Button btStudents;
         private Button btWorkouts;
         private Label lbHome;
+        private Button btWorkoutAssigns;
+        private Button btWorkoutsStudents;
     }
 }
