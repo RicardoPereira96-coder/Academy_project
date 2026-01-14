@@ -1,3 +1,6 @@
+using Forms;
+using Forms.Models;
+
 namespace StudentsForm
 {
     internal static class Program
@@ -10,7 +13,7 @@ namespace StudentsForm
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            GlobalConfig.InitializeConnections(DataBaseType.Sql);
             Application.Run(new HomeForm());
         }
     }

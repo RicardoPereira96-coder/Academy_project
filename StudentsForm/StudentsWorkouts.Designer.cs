@@ -44,7 +44,7 @@
             // lbStudentName
             // 
             lbStudentName.AutoSize = true;
-            lbStudentName.Location = new Point(233, 75);
+            lbStudentName.Location = new Point(244, 78);
             lbStudentName.Name = "lbStudentName";
             lbStudentName.Size = new Size(83, 15);
             lbStudentName.TabIndex = 26;

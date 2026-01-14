@@ -35,10 +35,10 @@
             lbStudentPhoneNumber = new Label();
             lbStudentEmail = new Label();
             lbStudentBirthDate = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            tbName = new TextBox();
+            tbPhoneNumber = new TextBox();
+            tbEmail = new TextBox();
+            tbBirth = new TextBox();
             ListStudents = new ListBox();
             SuspendLayout();
             // 
@@ -50,6 +50,7 @@
             btAddStudent.TabIndex = 0;
             btAddStudent.Text = "Add Student";
             btAddStudent.UseVisualStyleBackColor = true;
+            btAddStudent.Click += btAddStudent_Click;
             // 
             // btDeleteStudent
             // 
@@ -59,6 +60,7 @@
             btDeleteStudent.TabIndex = 1;
             btDeleteStudent.Text = "Delete Student";
             btDeleteStudent.UseVisualStyleBackColor = true;
+            btDeleteStudent.Click += btDeleteStudent_Click;
             // 
             // btStudentUpdate
             // 
@@ -68,6 +70,7 @@
             btStudentUpdate.TabIndex = 2;
             btStudentUpdate.Text = "Update Student Info";
             btStudentUpdate.UseVisualStyleBackColor = true;
+            btStudentUpdate.Click += btStudentUpdate_Click;
             // 
             // lbStudentName
             // 
@@ -105,33 +108,33 @@
             lbStudentBirthDate.TabIndex = 6;
             lbStudentBirthDate.Text = "Birth Date";
             // 
-            // textBox1
+            // tbName
             // 
-            textBox1.Location = new Point(224, 15);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(236, 23);
-            textBox1.TabIndex = 7;
+            tbName.Location = new Point(224, 15);
+            tbName.Name = "tbName";
+            tbName.Size = new Size(236, 23);
+            tbName.TabIndex = 7;
             // 
-            // textBox2
+            // tbPhoneNumber
             // 
-            textBox2.Location = new Point(224, 41);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(236, 23);
-            textBox2.TabIndex = 8;
+            tbPhoneNumber.Location = new Point(224, 41);
+            tbPhoneNumber.Name = "tbPhoneNumber";
+            tbPhoneNumber.Size = new Size(236, 23);
+            tbPhoneNumber.TabIndex = 8;
             // 
-            // textBox3
+            // tbEmail
             // 
-            textBox3.Location = new Point(224, 67);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(236, 23);
-            textBox3.TabIndex = 9;
+            tbEmail.Location = new Point(224, 67);
+            tbEmail.Name = "tbEmail";
+            tbEmail.Size = new Size(236, 23);
+            tbEmail.TabIndex = 9;
             // 
-            // textBox4
+            // tbBirth
             // 
-            textBox4.Location = new Point(224, 91);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(236, 23);
-            textBox4.TabIndex = 10;
+            tbBirth.Location = new Point(224, 91);
+            tbBirth.Name = "tbBirth";
+            tbBirth.Size = new Size(236, 23);
+            tbBirth.TabIndex = 10;
             // 
             // ListStudents
             // 
@@ -141,6 +144,7 @@
             ListStudents.Name = "ListStudents";
             ListStudents.Size = new Size(206, 229);
             ListStudents.TabIndex = 11;
+            ListStudents.SelectedIndexChanged += ListStudents_SelectedIndexChanged;
             // 
             // Students
             // 
@@ -148,10 +152,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(ListStudents);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbBirth);
+            Controls.Add(tbEmail);
+            Controls.Add(tbPhoneNumber);
+            Controls.Add(tbName);
             Controls.Add(lbStudentBirthDate);
             Controls.Add(lbStudentEmail);
             Controls.Add(lbStudentPhoneNumber);
@@ -174,10 +178,10 @@
         private Label lbStudentPhoneNumber;
         private Label lbStudentEmail;
         private Label lbStudentBirthDate;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox tbName;
+        private TextBox tbPhoneNumber;
+        private TextBox tbEmail;
+        private TextBox tbBirth;
         private ListBox ListStudents;
     }
 }

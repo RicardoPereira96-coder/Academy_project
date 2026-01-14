@@ -43,6 +43,7 @@
             btStudents.TabIndex = 0;
             btStudents.Text = "Students Management";
             btStudents.UseVisualStyleBackColor = true;
+            btStudents.Click += btStudents_Click;
             // 
             // btWorkouts
             // 
@@ -52,6 +53,7 @@
             btWorkouts.TabIndex = 1;
             btWorkouts.Text = "Workouts Management";
             btWorkouts.UseVisualStyleBackColor = true;
+            btWorkouts.Click += btWorkouts_Click;
             // 
             // lbHome
             // 
@@ -71,6 +73,7 @@
             btWorkoutAssigns.TabIndex = 3;
             btWorkoutAssigns.Text = "Workouts Assigns";
             btWorkoutAssigns.UseVisualStyleBackColor = true;
+            btWorkoutAssigns.Click += btWorkoutAssigns_Click;
             // 
             // btWorkoutsStudents
             // 
@@ -80,6 +83,7 @@
             btWorkoutsStudents.TabIndex = 4;
             btWorkoutsStudents.Text = "Students Workouts";
             btWorkoutsStudents.UseVisualStyleBackColor = true;
+            btWorkoutsStudents.Click += btWorkoutsStudents_Click;
             // 
             // HomeForm
             // 
