@@ -31,15 +31,18 @@
             cbStudentName = new ComboBox();
             lbStudentName = new Label();
             lbStudentWorkouts = new ListBox();
+            btBack = new Button();
             SuspendLayout();
             // 
             // cbStudentName
             // 
+            cbStudentName.DropDownStyle = ComboBoxStyle.DropDownList;
             cbStudentName.FormattingEnabled = true;
             cbStudentName.Location = new Point(345, 75);
             cbStudentName.Name = "cbStudentName";
             cbStudentName.Size = new Size(121, 23);
             cbStudentName.TabIndex = 27;
+            cbStudentName.SelectedIndexChanged += lbStudentWorkouts_SelectedIndexChanged;
             // 
             // lbStudentName
             // 
@@ -58,12 +61,24 @@
             lbStudentWorkouts.Name = "lbStudentWorkouts";
             lbStudentWorkouts.Size = new Size(233, 229);
             lbStudentWorkouts.TabIndex = 28;
+            lbStudentWorkouts.SelectedIndexChanged += lbStudentWorkouts_SelectedIndexChanged;
+            // 
+            // btBack
+            // 
+            btBack.Location = new Point(673, 395);
+            btBack.Name = "btBack";
+            btBack.Size = new Size(75, 23);
+            btBack.TabIndex = 29;
+            btBack.Text = "Back";
+            btBack.UseVisualStyleBackColor = true;
+            btBack.Click += btBack_Click;
             // 
             // StudentsWorkouts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btBack);
             Controls.Add(lbStudentWorkouts);
             Controls.Add(cbStudentName);
             Controls.Add(lbStudentName);
@@ -78,5 +93,6 @@
         private ComboBox cbStudentName;
         private Label lbStudentName;
         private ListBox lbStudentWorkouts;
+        private Button btBack;
     }
 }

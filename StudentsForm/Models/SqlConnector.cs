@@ -16,7 +16,16 @@ namespace Forms.Models
 
         public void AssignTraining(int studentId, int trainId, DateTime start, DateTime end)
         {
-            throw new NotImplementedException();
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("Fitness Academy")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@StudentID", studentId);
+                p.Add("@TrainID", trainId);
+                p.Add("@DateStart", start);
+                p.Add("@DateEnd", end);
+
+                connection.Execute("dbo.spStudent_Train_Insert", p, commandType: CommandType.StoredProcedure);
+            }
         }
 
         public void CreateStudent(StudentModel model)
@@ -85,12 +94,25 @@ namespace Forms.Models
 
         public List<TrainingModel> GetWorkoutsByStudent(int studentId)
         {
-            throw new NotImplementedException();
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                return connection.Query<TrainingModel>(
+                    "dbo.spStudent_Train_GetByStudent",
+                    new { StudentID = studentId },
+                    commandType: CommandType.StoredProcedure).ToList();
+            }
         }
 
         public void RemoveTraining(int studentId, int trainId)
         {
-            throw new NotImplementedException();
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("Fitness Academy")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@StudentID", studentId);
+                p.Add("@TrainID", trainId);
+
+                connection.Execute("dbo.spStudent_Train_Delete", p, commandType: CommandType.StoredProcedure);
+            }
         }
 
         public void UpdateStudent(StudentModel model)

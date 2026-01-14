@@ -34,6 +34,7 @@
             cbStudentName = new ComboBox();
             btAddWorkoutToStudent = new Button();
             btRemoveWorkoutToStudent = new Button();
+            btBack = new Button();
             SuspendLayout();
             // 
             // lbStudentName
@@ -56,19 +57,23 @@
             // 
             // cbWorkoutName
             // 
+            cbWorkoutName.DropDownStyle = ComboBoxStyle.DropDownList;
             cbWorkoutName.FormattingEnabled = true;
             cbWorkoutName.Location = new Point(341, 120);
             cbWorkoutName.Name = "cbWorkoutName";
             cbWorkoutName.Size = new Size(121, 23);
             cbWorkoutName.TabIndex = 24;
+            cbWorkoutName.SelectedIndexChanged += cbWorkoutName_SelectedIndexChanged;
             // 
             // cbStudentName
             // 
+            cbStudentName.DropDownStyle = ComboBoxStyle.DropDownList;
             cbStudentName.FormattingEnabled = true;
             cbStudentName.Location = new Point(341, 152);
             cbStudentName.Name = "cbStudentName";
             cbStudentName.Size = new Size(121, 23);
             cbStudentName.TabIndex = 25;
+            cbStudentName.SelectedIndexChanged += cbStudentName_SelectedIndexChanged;
             // 
             // btAddWorkoutToStudent
             // 
@@ -78,6 +83,7 @@
             btAddWorkoutToStudent.TabIndex = 26;
             btAddWorkoutToStudent.Text = "Add Workout to Student";
             btAddWorkoutToStudent.UseVisualStyleBackColor = true;
+            btAddWorkoutToStudent.Click += btAddWorkoutToStudent_Click;
             // 
             // btRemoveWorkoutToStudent
             // 
@@ -87,12 +93,24 @@
             btRemoveWorkoutToStudent.TabIndex = 27;
             btRemoveWorkoutToStudent.Text = "Remove Workout to Student";
             btRemoveWorkoutToStudent.UseVisualStyleBackColor = true;
+            btRemoveWorkoutToStudent.Click += btRemoveWorkoutToStudent_Click;
+            // 
+            // btBack
+            // 
+            btBack.Location = new Point(675, 390);
+            btBack.Name = "btBack";
+            btBack.Size = new Size(75, 23);
+            btBack.TabIndex = 28;
+            btBack.Text = "back";
+            btBack.UseVisualStyleBackColor = true;
+            btBack.Click += btBack_Click;
             // 
             // WorkoutsAssigns
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btBack);
             Controls.Add(btRemoveWorkoutToStudent);
             Controls.Add(btAddWorkoutToStudent);
             Controls.Add(cbStudentName);
@@ -112,5 +130,6 @@
         private ComboBox cbStudentName;
         private Button btAddWorkoutToStudent;
         private Button btRemoveWorkoutToStudent;
+        private Button btBack;
     }
 }
