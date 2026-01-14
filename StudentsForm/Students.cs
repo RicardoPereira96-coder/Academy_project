@@ -39,7 +39,7 @@ namespace Forms
                     BirthDate = tbBirth.Text
                 };
                 //GlobalConfig.Connection.CreateStudent(s);
-
+                GlobalConfig.Connection.CreateStudent(s);
                 availableStudents.Add(s);
                 WireUpLists();
                 ClearForm();
