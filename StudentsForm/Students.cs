@@ -52,12 +52,42 @@ namespace Forms
 
         private void btStudentUpdate_Click(object sender, EventArgs e)
         {
+            StudentModel selected = (StudentModel)ListStudents.SelectedItem;
 
+            if (selected != null && ValidateForm())
+            {
+                selected.Name = tbName.Text;
+                selected.PhoneNumber = tbPhoneNumber.Text;
+                selected.EmailAddress = tbEmail.Text;
+                selected.BirthDate = tbBirth.Text;
+
+                // Chama a spStudents_Update no SQL
+                GlobalConfig.Connection.UpdateStudent(selected);
+
+                WireUpLists();
+                MessageBox.Show("Student Info updated");
+            }
         }
 
         private void btDeleteStudent_Click(object sender, EventArgs e)
         {
+            StudentModel selected = (StudentModel)ListStudents.SelectedItem;
 
+            if (selected != null)
+            {
+                var confirm = MessageBox.Show($"Are you sure to delete the student {selected.Name}?", "Confirm", MessageBoxButtons.YesNo);
+
+                if (confirm == DialogResult.Yes)
+                {
+                    // Remove do SQL (spStudents_Delete)
+                    GlobalConfig.Connection.DeleteStudent(selected.ID);
+
+                    // Remove da lista em memória e atualiza UI
+                    availableStudents.Remove(selected);
+                    WireUpLists();
+                    ClearForm();
+                }
+            }
         }
         private bool ValidateForm()
         {
