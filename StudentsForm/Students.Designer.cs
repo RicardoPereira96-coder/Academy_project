@@ -45,122 +45,140 @@
             // 
             // btAddStudent
             // 
-            btAddStudent.Location = new Point(12, 12);
+            btAddStudent.BackColor = Color.FromArgb(0, 192, 0);
+            btAddStudent.FlatStyle = FlatStyle.Flat;
+            btAddStudent.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btAddStudent.Location = new Point(500, 29);
             btAddStudent.Name = "btAddStudent";
             btAddStudent.Size = new Size(112, 43);
             btAddStudent.TabIndex = 0;
             btAddStudent.Text = "Add Student";
-            btAddStudent.UseVisualStyleBackColor = true;
+            btAddStudent.UseVisualStyleBackColor = false;
             btAddStudent.Click += btAddStudent_Click;
             // 
             // btDeleteStudent
             // 
-            btDeleteStudent.Location = new Point(224, 147);
+            btDeleteStudent.BackColor = Color.Red;
+            btDeleteStudent.FlatStyle = FlatStyle.Flat;
+            btDeleteStudent.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btDeleteStudent.Location = new Point(618, 156);
             btDeleteStudent.Name = "btDeleteStudent";
-            btDeleteStudent.Size = new Size(112, 43);
+            btDeleteStudent.Size = new Size(114, 47);
             btDeleteStudent.TabIndex = 1;
             btDeleteStudent.Text = "Delete Student";
-            btDeleteStudent.UseVisualStyleBackColor = true;
+            btDeleteStudent.UseVisualStyleBackColor = false;
             btDeleteStudent.Click += btDeleteStudent_Click;
             // 
             // btStudentUpdate
             // 
-            btStudentUpdate.Location = new Point(12, 62);
+            btStudentUpdate.BackColor = Color.Yellow;
+            btStudentUpdate.FlatStyle = FlatStyle.Flat;
+            btStudentUpdate.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btStudentUpdate.Location = new Point(500, 78);
             btStudentUpdate.Name = "btStudentUpdate";
             btStudentUpdate.Size = new Size(112, 43);
             btStudentUpdate.TabIndex = 2;
             btStudentUpdate.Text = "Update Student Info";
-            btStudentUpdate.UseVisualStyleBackColor = true;
+            btStudentUpdate.UseVisualStyleBackColor = false;
             btStudentUpdate.Click += btStudentUpdate_Click;
             // 
             // lbStudentName
             // 
             lbStudentName.AutoSize = true;
-            lbStudentName.Location = new Point(130, 15);
+            lbStudentName.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            lbStudentName.Location = new Point(188, 21);
             lbStudentName.Name = "lbStudentName";
-            lbStudentName.Size = new Size(39, 15);
+            lbStudentName.Size = new Size(53, 22);
             lbStudentName.TabIndex = 3;
             lbStudentName.Text = "Name";
             // 
             // lbStudentPhoneNumber
             // 
             lbStudentPhoneNumber.AutoSize = true;
-            lbStudentPhoneNumber.Location = new Point(130, 44);
+            lbStudentPhoneNumber.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            lbStudentPhoneNumber.Location = new Point(121, 50);
             lbStudentPhoneNumber.Name = "lbStudentPhoneNumber";
-            lbStudentPhoneNumber.Size = new Size(88, 15);
+            lbStudentPhoneNumber.Size = new Size(120, 22);
             lbStudentPhoneNumber.TabIndex = 4;
             lbStudentPhoneNumber.Text = "Phone Number";
             // 
             // lbStudentEmail
             // 
             lbStudentEmail.AutoSize = true;
-            lbStudentEmail.Location = new Point(130, 71);
+            lbStudentEmail.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            lbStudentEmail.Location = new Point(190, 77);
             lbStudentEmail.Name = "lbStudentEmail";
-            lbStudentEmail.Size = new Size(36, 15);
+            lbStudentEmail.Size = new Size(51, 22);
             lbStudentEmail.TabIndex = 5;
             lbStudentEmail.Text = "Email";
             // 
             // lbStudentBirthDate
             // 
             lbStudentBirthDate.AutoSize = true;
-            lbStudentBirthDate.Location = new Point(130, 99);
+            lbStudentBirthDate.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            lbStudentBirthDate.Location = new Point(155, 105);
             lbStudentBirthDate.Name = "lbStudentBirthDate";
-            lbStudentBirthDate.Size = new Size(59, 15);
+            lbStudentBirthDate.Size = new Size(86, 22);
             lbStudentBirthDate.TabIndex = 6;
             lbStudentBirthDate.Text = "Birth Date";
             // 
             // tbName
             // 
-            tbName.Location = new Point(224, 15);
+            tbName.Location = new Point(247, 20);
             tbName.Name = "tbName";
             tbName.Size = new Size(236, 23);
             tbName.TabIndex = 7;
             // 
             // tbPhoneNumber
             // 
-            tbPhoneNumber.Location = new Point(224, 41);
+            tbPhoneNumber.Location = new Point(247, 49);
             tbPhoneNumber.Name = "tbPhoneNumber";
             tbPhoneNumber.Size = new Size(236, 23);
             tbPhoneNumber.TabIndex = 8;
             // 
             // tbEmail
             // 
-            tbEmail.Location = new Point(224, 67);
+            tbEmail.Location = new Point(247, 76);
             tbEmail.Name = "tbEmail";
             tbEmail.Size = new Size(236, 23);
             tbEmail.TabIndex = 9;
             // 
             // tbBirth
             // 
-            tbBirth.Location = new Point(224, 91);
+            tbBirth.Location = new Point(247, 104);
             tbBirth.Name = "tbBirth";
             tbBirth.Size = new Size(236, 23);
             tbBirth.TabIndex = 10;
             // 
             // ListStudents
             // 
+            ListStudents.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             ListStudents.FormattingEnabled = true;
-            ListStudents.ItemHeight = 15;
-            ListStudents.Location = new Point(12, 147);
+            ListStudents.ItemHeight = 22;
+            ListStudents.Location = new Point(121, 156);
             ListStudents.Name = "ListStudents";
-            ListStudents.Size = new Size(206, 229);
+            ListStudents.Size = new Size(491, 246);
             ListStudents.TabIndex = 11;
             ListStudents.SelectedIndexChanged += ListStudents_SelectedIndexChanged;
             // 
             // btBack
             // 
-            btBack.Location = new Point(658, 397);
+            btBack.BackColor = Color.FromArgb(224, 224, 224);
+            btBack.FlatStyle = FlatStyle.Flat;
+            btBack.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btBack.Location = new Point(669, 384);
             btBack.Name = "btBack";
-            btBack.Size = new Size(75, 23);
+            btBack.Size = new Size(93, 41);
             btBack.TabIndex = 12;
             btBack.Text = "Back";
-            btBack.UseVisualStyleBackColor = true;
+            btBack.UseVisualStyleBackColor = false;
             btBack.Click += btBack_Click;
             // 
             // Students
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(800, 450);
             Controls.Add(btBack);
             Controls.Add(ListStudents);

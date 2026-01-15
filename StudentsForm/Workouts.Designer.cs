@@ -43,100 +43,117 @@
             // 
             // ListWorkouts
             // 
+            ListWorkouts.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             ListWorkouts.FormattingEnabled = true;
-            ListWorkouts.ItemHeight = 15;
-            ListWorkouts.Location = new Point(12, 155);
+            ListWorkouts.ItemHeight = 22;
+            ListWorkouts.Location = new Point(119, 144);
             ListWorkouts.Name = "ListWorkouts";
-            ListWorkouts.Size = new Size(206, 229);
+            ListWorkouts.Size = new Size(523, 224);
             ListWorkouts.TabIndex = 23;
             ListWorkouts.SelectedIndexChanged += ListWorkouts_SelectedIndexChanged;
             // 
             // tbWorkoutDuration
             // 
-            tbWorkoutDuration.Location = new Point(242, 76);
+            tbWorkoutDuration.Location = new Point(277, 94);
             tbWorkoutDuration.Name = "tbWorkoutDuration";
             tbWorkoutDuration.Size = new Size(236, 23);
             tbWorkoutDuration.TabIndex = 21;
             // 
             // tbWorkoutObjetive
             // 
-            tbWorkoutObjetive.Location = new Point(242, 49);
+            tbWorkoutObjetive.Location = new Point(277, 65);
             tbWorkoutObjetive.Name = "tbWorkoutObjetive";
             tbWorkoutObjetive.Size = new Size(236, 23);
             tbWorkoutObjetive.TabIndex = 20;
             // 
             // tbWorkoutName
             // 
-            tbWorkoutName.Location = new Point(242, 20);
+            tbWorkoutName.Location = new Point(277, 37);
             tbWorkoutName.Name = "tbWorkoutName";
             tbWorkoutName.Size = new Size(236, 23);
             tbWorkoutName.TabIndex = 19;
+            tbWorkoutName.TextChanged += tbWorkoutName_TextChanged;
             // 
             // lbWokroutDuration
             // 
             lbWokroutDuration.AutoSize = true;
-            lbWokroutDuration.Location = new Point(130, 79);
+            lbWokroutDuration.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            lbWokroutDuration.Location = new Point(196, 92);
             lbWokroutDuration.Name = "lbWokroutDuration";
-            lbWokroutDuration.Size = new Size(53, 15);
+            lbWokroutDuration.Size = new Size(75, 22);
             lbWokroutDuration.TabIndex = 17;
             lbWokroutDuration.Text = "Duration";
             // 
             // lbWorkoutObjective
             // 
             lbWorkoutObjective.AutoSize = true;
-            lbWorkoutObjective.Location = new Point(130, 52);
+            lbWorkoutObjective.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            lbWorkoutObjective.Location = new Point(119, 66);
             lbWorkoutObjective.Name = "lbWorkoutObjective";
-            lbWorkoutObjective.Size = new Size(106, 15);
+            lbWorkoutObjective.Size = new Size(152, 22);
             lbWorkoutObjective.TabIndex = 16;
             lbWorkoutObjective.Text = "Workout Objective";
             // 
             // lbWorkoutName
             // 
             lbWorkoutName.AutoSize = true;
-            lbWorkoutName.Location = new Point(130, 23);
+            lbWorkoutName.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            lbWorkoutName.Location = new Point(218, 38);
             lbWorkoutName.Name = "lbWorkoutName";
-            lbWorkoutName.Size = new Size(39, 15);
+            lbWorkoutName.Size = new Size(53, 22);
             lbWorkoutName.TabIndex = 15;
             lbWorkoutName.Text = "Name";
             // 
             // btUpdateWorkout
             // 
-            btUpdateWorkout.Location = new Point(12, 70);
+            btUpdateWorkout.BackColor = Color.Yellow;
+            btUpdateWorkout.FlatStyle = FlatStyle.Flat;
+            btUpdateWorkout.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btUpdateWorkout.Location = new Point(519, 81);
             btUpdateWorkout.Name = "btUpdateWorkout";
-            btUpdateWorkout.Size = new Size(112, 43);
+            btUpdateWorkout.Size = new Size(123, 57);
             btUpdateWorkout.TabIndex = 14;
             btUpdateWorkout.Text = "Update Workout Info";
-            btUpdateWorkout.UseVisualStyleBackColor = true;
+            btUpdateWorkout.UseVisualStyleBackColor = false;
             btUpdateWorkout.Click += btUpdateWorkout_Click;
             // 
             // btDeleteWorkout
             // 
-            btDeleteWorkout.Location = new Point(224, 155);
+            btDeleteWorkout.BackColor = Color.Red;
+            btDeleteWorkout.FlatStyle = FlatStyle.Flat;
+            btDeleteWorkout.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btDeleteWorkout.Location = new Point(648, 144);
             btDeleteWorkout.Name = "btDeleteWorkout";
-            btDeleteWorkout.Size = new Size(112, 43);
+            btDeleteWorkout.Size = new Size(119, 55);
             btDeleteWorkout.TabIndex = 13;
             btDeleteWorkout.Text = "Delete Workout";
-            btDeleteWorkout.UseVisualStyleBackColor = true;
+            btDeleteWorkout.UseVisualStyleBackColor = false;
             btDeleteWorkout.Click += btDeleteWorkout_Click;
             // 
             // btAddWorkout
             // 
-            btAddWorkout.Location = new Point(12, 20);
+            btAddWorkout.BackColor = Color.FromArgb(0, 192, 0);
+            btAddWorkout.FlatStyle = FlatStyle.Flat;
+            btAddWorkout.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btAddWorkout.Location = new Point(519, 23);
             btAddWorkout.Name = "btAddWorkout";
-            btAddWorkout.Size = new Size(112, 43);
+            btAddWorkout.Size = new Size(123, 52);
             btAddWorkout.TabIndex = 12;
             btAddWorkout.Text = "Add Wokrout";
-            btAddWorkout.UseVisualStyleBackColor = true;
+            btAddWorkout.UseVisualStyleBackColor = false;
             btAddWorkout.Click += btAddWorkout_Click;
             // 
             // btBack
             // 
-            btBack.Location = new Point(661, 399);
+            btBack.BackColor = Color.FromArgb(224, 224, 224);
+            btBack.FlatStyle = FlatStyle.Flat;
+            btBack.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btBack.Location = new Point(671, 382);
             btBack.Name = "btBack";
-            btBack.Size = new Size(75, 23);
+            btBack.Size = new Size(96, 39);
             btBack.TabIndex = 24;
             btBack.Text = "Back";
-            btBack.UseVisualStyleBackColor = true;
+            btBack.UseVisualStyleBackColor = false;
             btBack.Click += btBack_Click;
             // 
             // Workouts

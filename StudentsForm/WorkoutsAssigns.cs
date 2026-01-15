@@ -19,6 +19,7 @@ namespace Forms
         {
             InitializeComponent();
             WireUpLists();
+            ClearForm();
         }
         private void WireUpLists()
         {
@@ -36,16 +37,20 @@ namespace Forms
 
             if (s != null && t != null)
             {
-                DateTime startDate = DateTime.Now;
-                DateTime endDate = DateTime.Now.AddMonths(3);
+                try
+                {
+                    DateTime startDate = DateTime.Now;
+                    DateTime endDate = DateTime.Now.AddMonths(3);
 
-                GlobalConfig.Connection.AssignTraining(s.ID, t.ID, startDate, endDate);
+                    GlobalConfig.Connection.AssignTraining(s.ID, t.ID, startDate, endDate);
 
-                MessageBox.Show($"Workout '{t.Name}' was successfully assigned to {s.Name}.");
-            }
-            else
-            {
-                MessageBox.Show("Please select both a student and a workout.");
+                    MessageBox.Show($"Workout{t.Name}assigned to {s.Name}!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error:" + ex.Message, "Duplicate Assignment",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
@@ -79,6 +84,12 @@ namespace Forms
         private void btBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void ClearForm()
+        {
+            cbStudentName.Text = "";
+            cbWorkoutName.Text = "";
+
         }
     }
 }

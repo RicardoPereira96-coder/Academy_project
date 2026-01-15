@@ -107,5 +107,10 @@ namespace Forms
         {
             this.Close();
         }
+
+        private void tbWorkoutName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
