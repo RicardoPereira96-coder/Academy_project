@@ -12,6 +12,9 @@ using System.Xml.Linq;
 
 namespace Forms
 {
+    /// <summary>
+    /// Form used to manage the library of available Workouts/Training plans.
+    /// </summary>
     public partial class Workouts : Form
     {
         private List<TrainingModel> availableWorkouts = GlobalConfig.Connection.GetTraining_All();
@@ -21,6 +24,9 @@ namespace Forms
             WireUpLists();
             ClearForm();
         }
+        /// <summary>
+        /// Synchronizes the ListBox with the available Workouts list.
+        /// </summary>
         private void WireUpLists()
         {
             ListWorkouts.DataSource = null;
@@ -81,9 +87,14 @@ namespace Forms
                 }
             }
         }
+        /// <summary>
+        /// Same as for the students validates data.
+        /// </summary>
+        /// <returns>True if the data is valid for saving.</returns>
         private bool ValidateForm()
         {
             bool output = true;
+            // Name must only contain letters/spaces
             foreach (char c in tbWorkoutName.Text)
             {
                 if (!char.IsLetter(c) && !char.IsWhiteSpace(c))
@@ -92,6 +103,7 @@ namespace Forms
                     return false;
                 }
             }
+            // Duration must be numeric
             foreach (char c in tbWorkoutDuration.Text)
             {
                 if (!char.IsDigit(c))
@@ -101,6 +113,7 @@ namespace Forms
                 }
             }
 
+            // All fields are mandatory
             if (tbWorkoutName.Text.Length == 0 || tbWorkoutDuration.Text.Length == 0 || tbWorkoutObjetive.Text.Length == 0)
             {
                 MessageBox.Show("Please fill in all fields (Name, Objective, and Duration).", "Invalid Input");

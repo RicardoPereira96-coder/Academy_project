@@ -32,6 +32,7 @@
             lbStudentName = new Label();
             lbStudentWorkouts = new ListBox();
             btBack = new Button();
+            lbWorkouts = new Label();
             SuspendLayout();
             // 
             // cbStudentName
@@ -63,7 +64,7 @@
             lbStudentWorkouts.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             lbStudentWorkouts.FormattingEnabled = true;
             lbStudentWorkouts.ItemHeight = 22;
-            lbStudentWorkouts.Location = new Point(233, 140);
+            lbStudentWorkouts.Location = new Point(244, 171);
             lbStudentWorkouts.Name = "lbStudentWorkouts";
             lbStudentWorkouts.Size = new Size(233, 224);
             lbStudentWorkouts.TabIndex = 28;
@@ -81,12 +82,23 @@
             btBack.UseVisualStyleBackColor = true;
             btBack.Click += btBack_Click;
             // 
+            // lbWorkouts
+            // 
+            lbWorkouts.AutoSize = true;
+            lbWorkouts.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            lbWorkouts.Location = new Point(244, 146);
+            lbWorkouts.Name = "lbWorkouts";
+            lbWorkouts.Size = new Size(82, 22);
+            lbWorkouts.TabIndex = 30;
+            lbWorkouts.Text = "Workouts";
+            // 
             // StudentsWorkouts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            Controls.Add(lbWorkouts);
             Controls.Add(btBack);
             Controls.Add(lbStudentWorkouts);
             Controls.Add(cbStudentName);
@@ -103,5 +115,6 @@
         private Label lbStudentName;
         private ListBox lbStudentWorkouts;
         private Button btBack;
+        private Label lbWorkouts;
     }
 }

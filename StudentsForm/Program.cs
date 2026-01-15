@@ -13,7 +13,7 @@ namespace StudentsForm
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            GlobalConfig.InitializeConnections(DataBaseType.Sql);
+            GlobalConfig.InitializeConnections(DataBaseType.TextFile);
             Application.Run(new HomeForm());
         }
     }

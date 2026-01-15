@@ -10,12 +10,20 @@ using System.Data;
 
 namespace Forms.Models
 {
+    /// <summary>
+    /// Implementation of IDataConnection for SQL Server.
+    /// Uses Dapper to map database results to C# objects.
+    /// </summary>
     public class SqlConnector : IDataConnection
     {
+        // Name of the connection string in App.config
         private const string db = "Fitness Academy";
 
         public void AssignTraining(int studentId, int trainId, DateTime start, DateTime end)
         {
+            /// <summary>
+            /// Links a student to a training plan using a stored procedure.
+            /// </summary>
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("Fitness Academy")))
             {
                 var p = new DynamicParameters();
@@ -28,6 +36,9 @@ namespace Forms.Models
             }
         }
 
+        /// <summary>
+        /// Saves a new student and retrieves the auto-generated ID from the database.
+        /// </summary>
         public void CreateStudent(StudentModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -44,6 +55,9 @@ namespace Forms.Models
             }
         }
 
+        /// <summary>
+        /// Saves a new training plan and captures the generated ID.
+        /// </summary>
         public void CreateTraining(TrainingModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -60,6 +74,9 @@ namespace Forms.Models
             }
         }
 
+        /// <summary>
+        /// Removes a student record via stored procedure.
+        /// </summary>
         public void DeleteStudent(int id)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -68,6 +85,9 @@ namespace Forms.Models
             }
         }
 
+        /// <summary>
+        /// Removes a training plan record via stored procedure.
+        /// </summary>
         public void DeleteTraining(int id)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -75,7 +95,9 @@ namespace Forms.Models
                 connection.Execute("dbo.spTraining_Delete", new { ID = id }, commandType: CommandType.StoredProcedure);
             }
         }
-
+        /// <summary>
+        /// Fetches all students from the database and maps them to StudentModel objects.
+        /// </summary>
         public List<StudentModel> GetStudents_All()
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -84,6 +106,9 @@ namespace Forms.Models
             }
         }
 
+        /// <summary>
+        /// Fetches all training plans from the database.
+        /// </summary>
         public List<TrainingModel> GetTraining_All()
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -92,6 +117,9 @@ namespace Forms.Models
             }
         }
 
+        /// <summary>
+        /// Retrieves workouts assigned to a specific student using their ID.
+        /// </summary>
         public List<TrainingModel> GetWorkoutsByStudent(int studentId)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -103,6 +131,9 @@ namespace Forms.Models
             }
         }
 
+        /// <summary>
+        /// Removes a specific student-training assignment.
+        /// </summary>
         public void RemoveTraining(int studentId, int trainId)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("Fitness Academy")))
@@ -115,6 +146,9 @@ namespace Forms.Models
             }
         }
 
+        /// <summary>
+        /// Updates an existing student's data in the database.
+        /// </summary>
         public void UpdateStudent(StudentModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -130,6 +164,9 @@ namespace Forms.Models
             }
         }
 
+        /// <summary>
+        /// Updates an existing workout plan in the database.
+        /// </summary>
         public void UpdateTraining(TrainingModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))

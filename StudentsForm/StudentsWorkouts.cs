@@ -11,13 +11,17 @@ using System.Windows.Forms;
 
 namespace Forms
 {
+    /// <summary>
+    /// Form designed to display the specific workouts assigned to a selected student.
+    /// </summary>
     public partial class StudentsWorkouts : Form
     {
+        // Load the full list of students from the data source on initialization
         private List<StudentModel> allStudents = GlobalConfig.Connection.GetStudents_All();
         public StudentsWorkouts()
         {
             InitializeComponent();
-
+            // Bind the student list to the ComboBox for selection
             cbStudentName.DataSource = allStudents;
             cbStudentName.DisplayMember = "Name";
         }
@@ -28,8 +32,10 @@ namespace Forms
 
             if (selected != null)
             {
+                // Retrieve only the workouts belonging to the selected student ID
                 List<TrainingModel> studentWorkouts = GlobalConfig.Connection.GetWorkoutsByStudent(selected.ID);
 
+                // Refresh the ListBox display
                 lbStudentWorkouts.DataSource = null;
                 lbStudentWorkouts.DataSource = studentWorkouts;
                 lbStudentWorkouts.DisplayMember = "Name";

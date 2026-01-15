@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Forms.Models
 {
+    /// <summary>
+    /// Model representing a training plan.
+    /// </summary>
     public class TrainingModel
     {
         public int ID { get; set; }

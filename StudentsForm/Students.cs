@@ -12,8 +12,12 @@ using System.Xml.Linq;
 
 namespace Forms
 {
+    /// <summary>
+    /// Form for managing student records, including creation, updates, and deletion.
+    /// </summary>
     public partial class Students : Form
     {
+        // Local list to hold students loaded from the data source
         private List<StudentModel> availableStudents = GlobalConfig.Connection.GetStudents_All();
         public Students()
         {
@@ -21,6 +25,9 @@ namespace Forms
             WireUpLists();
             ClearForm();
         }
+        /// <summary>
+        /// Refreshes the ListBox data binding to show the current list of students.
+        /// </summary>
         private void WireUpLists()
         {
             ListStudents.DataSource = null;
@@ -28,6 +35,9 @@ namespace Forms
             ListStudents.DisplayMember = "FullName";
         }
 
+        /// <summary>
+        /// Logic is after all the validations adds..
+        /// </summary>
         private void btAddStudent_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
@@ -39,7 +49,7 @@ namespace Forms
                     EmailAddress = tbEmail.Text,
                     BirthDate = tbBirth.Text
                 };
-
+                // Save to data storage (file or Database) and update local list
                 GlobalConfig.Connection.CreateStudent(s);
                 availableStudents.Add(s);
                 WireUpLists();
@@ -90,8 +100,13 @@ namespace Forms
                 }
             }
         }
+        /// <summary>
+        /// Validation for the data.
+        /// </summary>
+        /// <returns>True if all fields are valid.</returns>
         private bool ValidateForm()
         {
+            // Ensure name only contains letters and spaces
             bool output = true;
             foreach (char c in tbName.Text)
             {
@@ -101,6 +116,7 @@ namespace Forms
                     return false;
                 }
             }
+            // Ensure phone number contains only digits
             foreach (char c in tbPhoneNumber.Text)
             {
                 if (!char.IsDigit(c))
@@ -109,6 +125,7 @@ namespace Forms
                     return false;
                 }
             }
+            // Validate date format
             DateTime tempDate;
             bool isValidDate = DateTime.TryParse(tbBirth.Text, out tempDate);
 
@@ -117,6 +134,7 @@ namespace Forms
                 MessageBox.Show("Please enter a valid Birth Date (e.g., 15-01-2000).", "Invalid Input");
                 return false;
             }
+            // Check for empty required fields
             if (tbName.Text.Length == 0 || tbPhoneNumber.Text.Length == 0 || tbEmail.Text.Length == 0)
             {
                 MessageBox.Show("Please fill in all required fields.", "Invalid Input");
@@ -125,6 +143,9 @@ namespace Forms
 
             return output;
         }
+        /// <summary>
+        /// Resets all input fields to empty strings.
+        /// </summary>
         private void ClearForm()
         {
             tbName.Text = "";

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Forms.Models
 {
+    /// <summary>
+    /// Model representing a student.
+    /// </summary>
     public class StudentModel
     {
         public int ID { get; set; }
