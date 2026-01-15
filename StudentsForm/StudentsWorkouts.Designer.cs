@@ -36,38 +36,46 @@
             // 
             // cbStudentName
             // 
+            cbStudentName.BackColor = SystemColors.ScrollBar;
             cbStudentName.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbStudentName.FlatStyle = FlatStyle.Flat;
+            cbStudentName.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             cbStudentName.FormattingEnabled = true;
-            cbStudentName.Location = new Point(345, 75);
+            cbStudentName.Location = new Point(364, 75);
             cbStudentName.Name = "cbStudentName";
-            cbStudentName.Size = new Size(121, 23);
+            cbStudentName.Size = new Size(121, 30);
             cbStudentName.TabIndex = 27;
             cbStudentName.SelectedIndexChanged += lbStudentWorkouts_SelectedIndexChanged;
             // 
             // lbStudentName
             // 
             lbStudentName.AutoSize = true;
+            lbStudentName.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             lbStudentName.Location = new Point(244, 78);
             lbStudentName.Name = "lbStudentName";
-            lbStudentName.Size = new Size(83, 15);
+            lbStudentName.Size = new Size(114, 22);
             lbStudentName.TabIndex = 26;
             lbStudentName.Text = "Student Name";
+            lbStudentName.Click += lbStudentName_Click;
             // 
             // lbStudentWorkouts
             // 
+            lbStudentWorkouts.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             lbStudentWorkouts.FormattingEnabled = true;
-            lbStudentWorkouts.ItemHeight = 15;
+            lbStudentWorkouts.ItemHeight = 22;
             lbStudentWorkouts.Location = new Point(233, 140);
             lbStudentWorkouts.Name = "lbStudentWorkouts";
-            lbStudentWorkouts.Size = new Size(233, 229);
+            lbStudentWorkouts.Size = new Size(233, 224);
             lbStudentWorkouts.TabIndex = 28;
             lbStudentWorkouts.SelectedIndexChanged += lbStudentWorkouts_SelectedIndexChanged;
             // 
             // btBack
             // 
-            btBack.Location = new Point(673, 395);
+            btBack.FlatStyle = FlatStyle.Flat;
+            btBack.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btBack.Location = new Point(683, 394);
             btBack.Name = "btBack";
-            btBack.Size = new Size(75, 23);
+            btBack.Size = new Size(75, 32);
             btBack.TabIndex = 29;
             btBack.Text = "Back";
             btBack.UseVisualStyleBackColor = true;
@@ -77,6 +85,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(800, 450);
             Controls.Add(btBack);
             Controls.Add(lbStudentWorkouts);

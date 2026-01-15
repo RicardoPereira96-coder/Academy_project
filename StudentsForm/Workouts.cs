@@ -83,7 +83,31 @@ namespace Forms
         }
         private bool ValidateForm()
         {
-            return tbWorkoutName.Text.Length > 0 && tbWorkoutDuration.Text.Length > 0;
+            bool output = true;
+            foreach (char c in tbWorkoutName.Text)
+            {
+                if (!char.IsLetter(c) && !char.IsWhiteSpace(c))
+                {
+                    MessageBox.Show("The Name field can only contain letters.", "Invalid Input");
+                    return false;
+                }
+            }
+            foreach (char c in tbWorkoutDuration.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    MessageBox.Show("The Duration must contain only numbers (minutes).", "Invalid Input");
+                    return false;
+                }
+            }
+
+            if (tbWorkoutName.Text.Length == 0 || tbWorkoutDuration.Text.Length == 0 || tbWorkoutObjetive.Text.Length == 0)
+            {
+                MessageBox.Show("Please fill in all fields (Name, Objective, and Duration).", "Invalid Input");
+                output = false;
+            }
+
+            return output;
         }
         private void ListWorkouts_SelectedIndexChanged(object sender, EventArgs e)
         {

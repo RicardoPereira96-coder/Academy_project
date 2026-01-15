@@ -92,9 +92,38 @@ namespace Forms
         }
         private bool ValidateForm()
         {
-            if (tbName.Text.Length == 0) return false;
-            if (tbEmail.Text.Length == 0) return false;
-            return true;
+            bool output = true;
+            foreach (char c in tbName.Text)
+            {
+                if (!char.IsLetter(c) && !char.IsWhiteSpace(c))
+                {
+                    MessageBox.Show("The Name field can only contain letters.", "Invalid Input");
+                    return false;
+                }
+            }
+            foreach (char c in tbPhoneNumber.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    MessageBox.Show("The Phone Number must contain only numbers.", "Invalid Input");
+                    return false;
+                }
+            }
+            DateTime tempDate;
+            bool isValidDate = DateTime.TryParse(tbBirth.Text, out tempDate);
+
+            if (isValidDate == false)
+            {
+                MessageBox.Show("Please enter a valid Birth Date (e.g., 15-01-2000).", "Invalid Input");
+                return false;
+            }
+            if (tbName.Text.Length == 0 || tbPhoneNumber.Text.Length == 0 || tbEmail.Text.Length == 0)
+            {
+                MessageBox.Show("Please fill in all required fields.", "Invalid Input");
+                output = false;
+            }
+
+            return output;
         }
         private void ClearForm()
         {

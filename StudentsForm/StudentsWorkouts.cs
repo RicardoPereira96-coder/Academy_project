@@ -40,6 +40,10 @@ namespace Forms
         {
             this.Close();
         }
-        
-}
+
+        private void lbStudentName_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
